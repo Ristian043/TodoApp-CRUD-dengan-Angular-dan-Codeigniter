@@ -1,0 +1,24 @@
+<div class="container">
+  <button class="btn-tambah" mat-raised-button color="primary" (click)="buatKegiatan()">Add Activities</button>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>To Do List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let item of dataTodo">
+          <img matListAvatar src="assets/todo.png" alt="...">
+          <h3 matLine> {{item.judul}} </h3>
+          <p matLine>
+            <span> {{item.deskripsi}} </span>
+          </p>
+          <p matLine>
+            <span>Deadline : {{item.jadwal_selesai}}</span>
+          </p>
+          <button class="btn-edit" mat-raised-button color="accent" (click)="editTodo(item)">Edit</button>
+          <button class="btn-selesai" mat-raised-button color="warn" (click)="hapusTodo(item.id)">Done</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
